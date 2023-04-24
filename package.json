@@ -14,7 +14,8 @@
 		"format": "prettier --plugin-search-dir . --write .",
 		"storybook": "storybook dev -p 6310",
 		"build-storybook": "storybook build",
-		"update:all": "pnpm -r up -i -L"
+		"update:all": "pnpm -r up -i -L",
+		"prepare": "pnpm run package"
 	},
 	"exports": {
 		".": {
