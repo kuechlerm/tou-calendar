@@ -14,6 +14,8 @@
 	import de from 'date-fns/locale/de';
 	import { createEventDispatcher, onMount, tick } from 'svelte';
 	import { scale } from 'svelte/transition';
+	import ChevronUp from './ChevronUp.svelte';
+	import ChevronDown from './ChevronDown.svelte';
 
 	const dispatch = createEventDispatcher();
 
@@ -119,7 +121,9 @@
 
 	<div class="dates-wrapper" use:measure bind:this={dates_wrapper} on:scroll={handle_scroll}>
 		<div class="dates">
-			<div class="more" on:click={() => add_weeks(true)} on:keyup>More</div>
+			<div class="more" on:click={() => add_weeks(true)} on:keyup>
+				<ChevronUp />
+			</div>
 
 			{#each weeks as week (`${week.year}_${week.week_no}`)}
 				<div class="tile week-no" data-weekno={week.week_no}>
@@ -143,7 +147,9 @@
 				{/each}
 			{/each}
 
-			<div class="more" on:click={() => add_weeks(false)} on:keyup>More</div>
+			<div class="more" on:click={() => add_weeks(false)} on:keyup>
+				<ChevronDown />
+			</div>
 		</div>
 	</div>
 
@@ -160,8 +166,9 @@
 	}
 
 	.calendar {
-		border: 1px solid gray;
-		padding: 2px;
+		border: 1px solid rgba(10, 10, 10, 0.4);
+		border-radius: 4px;
+		padding: 8px;
 
 		display: flex;
 		flex-direction: column;
@@ -210,7 +217,12 @@
 		cursor: pointer;
 		border-radius: 4px;
 		height: 32px;
-		border: 1px solid rgba(10, 10, 10, 0.05);
+		border: 1px solid rgba(10, 10, 10, 0.3);
+		color: rgba(10, 10, 10, 0.5);
+	}
+
+	.more:hover {
+		color: rgba(10, 10, 10, 1);
 	}
 
 	.day {
@@ -245,13 +257,17 @@
 
 	.active-month {
 		/* opacity: 1; */
-		transition: background-color 0.8s;
+		transition: background-color 0.6s;
 
 		background-color: rgba(10, 10, 10, 0.3);
 	}
 
 	.active-month.weekend {
 		background: rgba(10, 10, 10, 0.5);
+	}
+
+	.day:hover {
+		background-color: rgba(65, 190, 220, 1);
 	}
 
 	.today,
@@ -261,7 +277,6 @@
 	}
 
 	.actions {
-		padding: 4px;
 		display: flex;
 		justify-content: flex-end;
 		gap: 4px;
