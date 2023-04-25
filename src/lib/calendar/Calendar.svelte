@@ -40,7 +40,9 @@
 
 	let scrollbar_width = 0;
 	function measure(el: HTMLElement) {
-		scrollbar_width = el.offsetWidth - el.clientWidth;
+		tick().then(() => {
+			scrollbar_width = el.offsetWidth - el.clientWidth;
+		});
 	}
 
 	async function add_weeks(before: boolean) {
