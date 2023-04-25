@@ -100,7 +100,7 @@
 	<div class="header" style="position: relative; height:30px">
 		{#key format(current_date, 'MMMM yyyy', { locale: de })}
 			<div
-				transition:scale
+				transition:scale|local
 				style="position:absolute; top:0; bottom:0; left:0;display:flex; align-items:center;"
 			>
 				<div style="padding-left:8px">

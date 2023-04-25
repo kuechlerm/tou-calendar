@@ -18,6 +18,9 @@ devDependencies:
   '@storybook/blocks':
     specifier: 7.0.7
     version: 7.0.7(react-dom@18.2.0)(react@18.2.0)
+  '@storybook/builder-vite':
+    specifier: 7.0.7
+    version: 7.0.7(typescript@5.0.4)(vite@4.3.1)
   '@storybook/svelte':
     specifier: 7.0.7
     version: 7.0.7(svelte@3.58.0)
@@ -2961,7 +2964,7 @@ packages:
     resolution: {integrity: sha512-IO+MJPVhoqz+28h1qLAcBEH2+xHMK6MTyHJc7MTnnYb6wsoLR29POVGJ7LycmVXIqyy/4/2ShP5sUwTXuOwb/w==}
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 16.18.24
+      '@types/node': 18.16.0
     dev: true
 
   /@types/graceful-fs@4.1.6:

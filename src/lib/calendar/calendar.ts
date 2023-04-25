@@ -1,4 +1,4 @@
-import { add, setWeek, startOfWeek, type Locale, getYear, getISOWeeksInYear } from 'date-fns';
+import { add, setWeek, startOfWeek, type Locale, getISOWeeksInYear } from 'date-fns';
 import { de } from 'date-fns/locale';
 
 export function get_weekdates(week_no: number, year: number) {
